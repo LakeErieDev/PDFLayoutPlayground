@@ -12,9 +12,14 @@ public class PDFLayout
         AddPage();
     }
 
-    private void AddPage()
+    private async void AddPage()
     {
-        PagesWithColumns.Add(_settings.Columns);
+        PDFLayoutColumn[] emptyArray = new PDFLayoutColumn[_settings.NumberOfColumns];
+
+        for (int i = 0; i < _settings.NumberOfColumns; i++)
+            emptyArray[i] = new PDFLayoutColumn(_settings.Columns[i].Width, _settings.Columns[i].Height);
+
+        PagesWithColumns.Add(emptyArray);
     }
 
     public int AddObjectToColumn(PDFColumnObject ColumnObject, bool isRecursive = false)
@@ -23,7 +28,7 @@ public class PDFLayout
         bool failToAdd = false;
 
         foreach (PDFLayoutColumn[] layoutColumn in PagesWithColumns)
-        {           
+        {
 
             for (int i = 0; i < layoutColumn.Length; i++)
             {
@@ -33,16 +38,14 @@ public class PDFLayout
                     retVal = i;
                     break;
                 }
-                else                
-                    failToAdd = true;                    
             }
 
-            if(retVal > -1)
+            if(retVal >=0)
                 break;
+        }       
 
-            if (failToAdd && !isRecursive)
-                break;
-        }
+        if(retVal == -1)
+            failToAdd = true;
 
         if (failToAdd && !isRecursive)
         {
@@ -50,7 +53,7 @@ public class PDFLayout
             AddObjectToColumn(ColumnObject, true);
         }
         else if (failToAdd && isRecursive)
-            Console.WriteLine($"Cant fit {ColumnObject.Label} anywhere"); 
+            Console.WriteLine($"Cant fit {ColumnObject.Label}-{ColumnObject.Height} anywhere");
 
         return retVal;
     }
@@ -86,8 +89,6 @@ public class PDFLayoutSettings
         if (columns == null || columns.Length == 0)
             throw new ArgumentNullException(nameof(columns));
 
-
-
         _columns = columns;
         _numberOfColumns = _columns.Length;
 
@@ -101,6 +102,10 @@ public class PDFLayoutColumn
     private readonly double _height;
     private double availableHeight;
     public double AvailableHeight { get { return availableHeight; } }
+
+    public double Width { get { return _width; } }
+
+    public double Height { get { return _height; } }
     public List<PDFColumnObject> ColumnObjects { get; set; } = new List<PDFColumnObject>();
 
     public PDFLayoutColumn(double width, double height)
@@ -164,6 +169,6 @@ public class PDFColumnObject
 
     public override string ToString()
     {
-        return Label;
+        return $"{Label}-{Height}";
     }
 }
