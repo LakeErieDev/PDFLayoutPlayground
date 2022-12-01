@@ -23,17 +23,22 @@ public class PDFLayout
         bool failToAdd = false;
 
         foreach (PDFLayoutColumn[] layoutColumn in PagesWithColumns)
-        {
+        {           
+
             for (int i = 0; i < layoutColumn.Length; i++)
             {
                 if (layoutColumn[i].AddObjectToColumn(ColumnObject) > -1)
                 {
+                    Console.WriteLine($"Adding {ColumnObject.Label}");
                     retVal = i;
                     break;
                 }
                 else                
                     failToAdd = true;                    
             }
+
+            if(retVal > -1)
+                break;
 
             if (failToAdd && !isRecursive)
                 break;
