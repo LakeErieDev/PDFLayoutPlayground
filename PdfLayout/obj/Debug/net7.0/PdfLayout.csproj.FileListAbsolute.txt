@@ -1,0 +1,15 @@
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\bin\Debug\net7.0\PdfLayout.exe
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\bin\Debug\net7.0\PdfLayout.deps.json
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\bin\Debug\net7.0\PdfLayout.runtimeconfig.json
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\bin\Debug\net7.0\PdfLayout.dll
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\bin\Debug\net7.0\PdfLayout.pdb
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.csproj.AssemblyReference.cache
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.AssemblyInfoInputs.cache
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.AssemblyInfo.cs
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.csproj.CoreCompileInputs.cache
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.dll
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\refint\PdfLayout.dll
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.pdb
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\PdfLayout.genruntimeconfig.cache
+C:\Users\ericj\VSCode\PDFLayoutPlayground\PdfLayout\obj\Debug\net7.0\ref\PdfLayout.dll
