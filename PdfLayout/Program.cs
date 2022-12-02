@@ -8,13 +8,15 @@ PDFLayout layout = new PDFLayout(new PDFLayoutSettings(columns));
 
 char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
-int range = 7;
+int range = 8;
 Random r = new Random();
+double minimum = 0.5;
+double maximum = 8.0;
 
 foreach(char c in alpha)
 {
-    layout.AddObjectToColumn(new PDFColumnObject(r.NextDouble()* range, c.ToString()));    
+    double random = r.NextDouble() * (maximum - minimum) + minimum;
+    layout.AddObjectToColumn(new PDFColumnObject(random, c.ToString()));    
 }
-
 
 layout.PrintLayout();
